@@ -1,14 +1,13 @@
-.container
-  p#notice = notice
-  .row
-  
-    =(image_tag(@convertor.get_chemical)) &&  @convertor.get_chemical
 
+p#notice = notice
+.row
+  .col-xs-3
+    h2.converted =@convertor.get_chemical
 
     
-  .row
-    .col-xs-6
-      = link_to 'Edit', edit_convertor_path(@convertor)
-      
-    .col-xs-6
-      = link_to 'Back', convertors_path
+.row
+  .col-xs-1
+    = link_to 'Edit', edit_convertor_path(@convertor)
+    
+  .col-xs-1
+    = link_to 'Back', convertors_path
