@@ -1,0 +1,1 @@
+json.partial! "convertors/convertor", convertor: @convertor

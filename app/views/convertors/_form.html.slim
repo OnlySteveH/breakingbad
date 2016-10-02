@@ -1,0 +1,11 @@
+= simple_form_for @convertor do |f|
+  - if @convertor.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@convertor.errors.count, "error")} prohibited this convertor from being saved:"
+      ul
+        - @convertor.errors.full_messages.each do |message|
+          li = message
+
+  .actions 
+    = f.input :name
+    = f.button :submit

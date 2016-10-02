@@ -1,0 +1,16 @@
+.container
+
+  h1 Listing convertors
+
+  -@convertors.each do |convertor|
+    .row
+      .col-xs-12
+        = convertor.name.downcase
+      .col-xs-12
+        = link_to 'Show', convertor
+        = link_to 'Edit', edit_convertor_path(convertor)
+        = link_to 'Destroy', convertor, data: { confirm: 'Are you sure?' }, method: :delete
+
+  br
+
+  = link_to 'New Convertor', new_convertor_path
