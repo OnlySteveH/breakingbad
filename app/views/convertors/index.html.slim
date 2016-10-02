@@ -1,16 +1,18 @@
-.container
 
-  h1 Listing convertors
 
-  -@convertors.each do |convertor|
-    .row
-      .col-xs-12
-        = convertor.name.downcase
-      .col-xs-12
-        = link_to 'Show', convertor
-        = link_to 'Edit', edit_convertor_path(convertor)
-        = link_to 'Destroy', convertor, data: { confirm: 'Are you sure?' }, method: :delete
+h1.title Listing Chemical Names
 
-  br
+-@convertors.each do |convertor|
+  .row
+    .col-xs-3
+      = convertor.name.downcase
+    .col-xs-1
+      = link_to 'Show', convertor
+    .col-xs-1
+      = link_to 'Edit', edit_convertor_path(convertor)
+    .col-xs-1
+      = link_to 'Destroy', convertor, data: { confirm: 'Are you sure?' }, method: :delete
+  hr
+br
 
-  = link_to 'New Convertor', new_convertor_path
+= link_to 'New Convertor', new_convertor_path, class:"btn btn-success"
